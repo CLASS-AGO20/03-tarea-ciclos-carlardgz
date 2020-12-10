@@ -65,15 +65,19 @@ export default class App {
       numero2 = t;
     }
 
-    do {
-      if (numero2 % 2 !== 0) {
-        resultado = resultado + numero2 + ",";
-        numero2--;
+    for (let i = numero2; i >= numero1; i--) {
+      if (numero2 % 2 != 0) {
+        if (resultado == "") {
+          resultado = resultado + numero2;
+          numero2--;
+        } else {
+          resultado = resultado + "," + numero2;
+          numero2--;
+        }
       } else {
         numero2--;
       }
-    } while (numero2 >= numero1);
-
+    }
     return resultado;
   }
 }
